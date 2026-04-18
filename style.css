@@ -385,35 +385,72 @@ main {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 20px;
+    left: 45px;
     height: 100%;
-    width: 2px;
-    background: var(--glass-border);
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary), transparent);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
 }
 
 .timeline-item {
     position: relative;
-    padding-left: 60px;
-    margin-bottom: 3rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-left: 100px;
+    margin-bottom: 4rem;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(40px);
+}
+
+.timeline-item:nth-child(even):hover {
+    transform: translateX(40px) translateY(-5px);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 55px;
+    top: 60px;
+    width: 45px;
+    height: 2px;
+    background: var(--glass-border);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.timeline-item:hover::after {
+    background: var(--accent-primary);
+    box-shadow: 0 0 10px var(--accent-primary);
 }
 
 .timeline-dot {
     position: absolute;
-    left: 12px;
-    top: 35px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--gradient-1);
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    left: 36px;
+    top: 50px;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    border: 3px solid var(--accent-primary);
+    transform: rotate(45deg);
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+.timeline-item:hover .timeline-dot {
+    background: var(--accent-primary);
+    transform: rotate(225deg) scale(1.3);
+    box-shadow: 0 0 25px var(--accent-primary);
 }
 
 .timeline-content h3 {
