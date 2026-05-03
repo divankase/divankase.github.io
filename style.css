@@ -272,9 +272,17 @@ main {
     color: #fff;
 }
 
-.btn-outline:hover {
-    border-color: var(--accent-primary);
-    background: rgba(14, 165, 233, 0.05);
+.btn-secondary {
+    background: rgba(14, 165, 233, 0.15) !important;
+    border: 1px solid var(--accent-primary) !important;
+    color: var(--accent-primary) !important;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: var(--accent-primary) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
 }
 
 .hero-image-wrapper {
