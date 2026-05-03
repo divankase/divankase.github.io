@@ -537,14 +537,90 @@ main {
     }
 }
 
-/* Scroll Revel */
-.hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s ease-out;
-}
+/* Print Styles for PDF Generation */
+@media print {
+    :root {
+        --bg-main: #ffffff;
+        --bg-secondary: #f8fafc;
+        --text-primary: #0f172a;
+        --text-muted: #475569;
+        --accent-primary: #0284c7;
+        --glass-bg: #ffffff;
+        --glass-border: #e2e8f0;
+    }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
+    body {
+        background: white !important;
+        color: black !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .aurora, .aurora-blur, .navbar, .hero-buttons, .social-links, .btn {
+        display: none !important;
+    }
+
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .section {
+        padding: 2rem 0 !important;
+        min-height: auto !important;
+        page-break-inside: avoid;
+    }
+
+    .section-title {
+        color: var(--accent-primary) !important;
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .glass-card {
+        background: white !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        transform: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 2rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .hero-section {
+        padding-top: 0 !important;
+    }
+
+    .hero-content {
+        flex-direction: row !important;
+        text-align: left !important;
+        gap: 2rem !important;
+    }
+
+    .hero-image-border {
+        width: 150px !important;
+        height: 150px !important;
+        animation: none !important;
+    }
+
+    .print-footer {
+        display: block !important;
+        text-align: center;
+        border-top: 1px solid #ddd;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        font-size: 0.9rem;
+        color: var(--accent-primary);
+    }
+
+    .gradient-text {
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        color: var(--text-primary) !important;
+    }
+
+    h3, h4 {
+        color: var(--accent-primary) !important;
+    }
 }

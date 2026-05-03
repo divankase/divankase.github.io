@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-                
+
                 // Stagger reveal for children if they exist
                 const children = entry.target.querySelectorAll('.glass-card, .project-card, .resume-card, .timeline-item');
                 children.forEach((child, index) => {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = hamburger.querySelector('i');
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
-        
+
         // Disable scroll when menu is open
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
     });
