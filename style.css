@@ -246,6 +246,10 @@ main {
     text-decoration: none;
     transition: 0.3s;
     text-align: center;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
 }
 
 .btn-primary {
