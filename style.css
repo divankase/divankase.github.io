@@ -537,90 +537,100 @@ main {
     }
 }
 
-/* Print Styles for PDF Generation */
+/* Scroll Revel */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Print Styles */
+.print-only {
+    display: none;
+}
+
 @media print {
-    :root {
-        --bg-main: #ffffff;
-        --bg-secondary: #f8fafc;
-        --text-primary: #0f172a;
-        --text-muted: #475569;
-        --accent-primary: #0284c7;
-        --glass-bg: #ffffff;
-        --glass-border: #e2e8f0;
+    .print-only {
+        display: block !important;
     }
 
-    body {
-        background: white !important;
-        color: black !important;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
-
-    .aurora, .aurora-blur, .navbar, .hero-buttons, .social-links, .btn {
+    .navbar, .hero-buttons, .hamburger, .social-links, .btn {
         display: none !important;
     }
 
-    main {
-        padding: 0 !important;
-        margin: 0 !important;
-        max-width: 100% !important;
+    body {
+        background: #fff !important;
+        color: #000 !important;
     }
 
-    .section {
-        padding: 2rem 0 !important;
-        min-height: auto !important;
-        page-break-inside: avoid;
-    }
-
-    .section-title {
-        color: var(--accent-primary) !important;
-        font-size: 2.5rem !important;
-        margin-bottom: 1rem !important;
+    .aurora, .aurora-blur {
+        display: none !important;
     }
 
     .glass-card {
-        background: white !important;
+        background: #fff !important;
         border: 1px solid #ddd !important;
+        color: #000 !important;
         box-shadow: none !important;
-        transform: none !important;
-        page-break-inside: avoid;
-        margin-bottom: 2rem !important;
-        padding: 1.5rem !important;
+        margin-bottom: 20px !important;
+        break-inside: avoid;
+        backdrop-filter: none !important;
+    }
+
+    .section {
+        padding: 40px 0 !important;
+        min-height: auto !important;
+        break-before: auto;
+    }
+
+    .section-title {
+        color: #000 !important;
+    }
+
+    .section-subtitle, .tag, .date, .company {
+        color: #000 !important;
+        border-color: #000 !important;
     }
 
     .hero-section {
-        padding-top: 0 !important;
-    }
-
-    .hero-content {
-        flex-direction: row !important;
-        text-align: left !important;
-        gap: 2rem !important;
+        padding-top: 20px !important;
     }
 
     .hero-image-border {
-        width: 150px !important;
-        height: 150px !important;
-        animation: none !important;
+        display: none;
     }
 
-    .print-footer {
-        display: block !important;
-        text-align: center;
-        border-top: 1px solid #ddd;
-        margin-top: 2rem;
-        padding-top: 1rem;
-        font-size: 0.9rem;
-        color: var(--accent-primary);
+    .hero-text h1 {
+        color: #000 !important;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
     }
 
     .gradient-text {
         background: none !important;
         -webkit-text-fill-color: initial !important;
-        color: var(--text-primary) !important;
+        color: #000 !important;
     }
 
-    h3, h4 {
-        color: var(--accent-primary) !important;
+    main {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .hidden, .section {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 }
