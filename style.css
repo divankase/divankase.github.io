@@ -258,8 +258,8 @@ main {
 }
 
 .btn-primary {
-    background: var(--gradient-1) !important;
-    background-color: var(--accent-primary) !important;
+    background-color: #0ea5e9 !important;
+    background: #0ea5e9 !important;
     color: #fff !important;
 }
 
@@ -529,10 +529,12 @@ main {
     .hero-buttons {
         flex-direction: column;
         width: 100%;
+        align-items: center;
     }
 
     .btn {
-        width: 100%;
+        width: auto;
+        min-width: 200px;
     }
 }
 
