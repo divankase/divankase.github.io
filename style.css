@@ -247,8 +247,8 @@ main {
     transition: 0.3s;
     text-align: center;
     cursor: pointer;
-    border: none;
-    background: transparent !important;
+    border: 1px solid transparent;
+    background: transparent;
     color: #fff;
     font-family: inherit;
     display: inline-flex;
